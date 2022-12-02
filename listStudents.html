@@ -150,10 +150,10 @@
             <td>{{aluno.nota1}}</td>
             <td>{{aluno.nota2}}</td>
             <td ng-if="media > 5">
-              <b class='badge text-bg-info text-primary' ng-bind="(calcularValor(aluno.nota1,aluno.nota2)/2)"></b>
+              <b class='badge text-bg-info text-primary' ng-bind="media"></b>
             </td>
             <td ng-if="media < 5">
-              <b class='badge text-bg-info text-danger' ng-bind="(calcularValor(aluno.nota1,aluno.nota2)/2)"></b>
+              <b class='badge text-bg-info text-danger' ng-bind="media"></b>
             </td>
           </tr>
 
