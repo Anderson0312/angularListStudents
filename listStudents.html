@@ -68,15 +68,15 @@
             );
           };
 
-          // $scope.getTotal = function()
-          //   {
-          //     var s = 0;
-          //     for(i = 0; i < $scope.alunos.length; i++)
-          //     {
-          //       s = s + $scope.alunos[i].matricula;
-          //     }        
-          //     return s;
-          //   }
+          $scope.getTotal = function()
+            {
+              var s = 0;
+              for(i = 0; i < $scope.alunos.length; i++)
+              {
+                s = s + $scope.alunos[i].matricula;
+              }        
+              return s;
+            }
 
           $scope.removerAluno = function (alunos) {
             $scope.alunos = alunos.filter(function (aluno) {
@@ -94,7 +94,8 @@
 
           $scope.ordenarPor = function (campo){
             this.criterioDeOrdenacao = campo;
-          }
+          };
+
         });
     </script>
   </head>
@@ -105,7 +106,7 @@
       <!--
 	    {{alunos}}
 	    -->
-      <table class="table table-striped">
+      <table class="table table-striped" >
 
         <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="Digite a Matrícula ou Nome">
 
@@ -150,14 +151,18 @@
             <td>{{aluno.nota1}}</td>
             <td>{{aluno.nota2}}</td>
             <td ng-if="media > 5">
-              <b class='badge text-bg-info text-primary' ng-bind="media"></b>
+              <b class='badge text-bg-info text-success' ng-bind="media"></b>
             </td>
             <td ng-if="media < 5">
               <b class='badge text-bg-info text-danger' ng-bind="media"></b>
             </td>
           </tr>
-
-
+          <tr>
+            <th>Média Turma</th>
+            <th></th>
+            <th></th>
+            <th>{{alunos.length / media}}</th>
+          </tr>
       </table>
 
       <!-- Realiza o teste para ver se está funcionando.
